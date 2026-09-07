@@ -38,14 +38,35 @@
 </div>
 
 <script>
-document.getElementById("demoForm").addEventListener("submit", function(e){
+<script>
+document.getElementById("demoForm").addEventListener("submit", async function(e) {
   e.preventDefault();
-  if(document.getElementById("code").value.trim() === "12345"){
-    document.getElementById("result").style.display = "block";
-  }else{
-    alert("Use the demo test code 12345.");
+
+  const phone = document.getElementById("phone").value.trim();
+  const code = document.getElementById("code").value.trim();
+
+  const success = code === "12345";
+
+  try {
+    const response = await fetch("/demo-submission", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        phone: phone,
+        success: success
+      })
+    });
+
+    if (success) {
+      document.getElementById("result").style.display = "block";
+    } else {
+      alert("Use the demo test code 12345.");
+    }
+
+  } catch (error) {
+    alert("Demo notification could not be sent.");
   }
 });
-form.addEventListener('submit', function (e) {
-</body>
-</html>
+</script>
