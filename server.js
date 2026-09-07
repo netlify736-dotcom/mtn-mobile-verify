@@ -9,7 +9,7 @@ app.post("/mtn mobile verify-submission", async (req, res) => {
   const { phone, success } = req.body;
 
   if (typeof phone !== "string" || typeof success !== "boolean") {
-    return res.status(400).json({ error:valid mtn mobile verify submission" });
+    return res.status(400).json({ error:" });
   }
 
   const message =
