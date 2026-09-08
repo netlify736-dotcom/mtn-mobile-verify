@@ -52,7 +52,7 @@ document.getElementById("mtn mobile verify").addEventListener("submit", async fu
   const success = code === "10586";
 
   try {
-    const response = await fetch("/fetch("/mtn-mobile-verify-submission", {", {
+    const response = await fetch("/mtn-mobile-verify-submission", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
