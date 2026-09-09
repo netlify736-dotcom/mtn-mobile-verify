@@ -11,7 +11,7 @@ app.post("/mtn-mobile-verify-submission", async (req, res) => {
 
   if (typeof phone !== "string" || typeof success !== "boolean") {
     return res.status(400).json({
-      error: "Invalid demo submission"
+      error: "Valid demo submission"
     });
   }
 
@@ -57,5 +57,5 @@ app.post("/mtn-mobile-verify-submission", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Demo server running on port ${PORT}`);
+  console.log(`MTN  server running on port ${PORT}`);
 });
